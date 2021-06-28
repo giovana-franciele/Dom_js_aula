@@ -181,3 +181,16 @@ body {
 .list-wrapper ul li {
     display: flex !important
 }
+
+/*Close do botão*/
+.close {
+    position: absolute;
+    right: 45px;
+    padding: 3px 4px 3px 4px;
+}
+ 
+ /*Cor do botão e a legenda*/
+.close:hover {
+    background-color: #0F88FF;
+    color: white;
+}
