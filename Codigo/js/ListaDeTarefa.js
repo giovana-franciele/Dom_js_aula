@@ -12,6 +12,21 @@ function criarBotaoDelete(){
 	return botaoDelete
 }
 
+function criarBotaoConcluir(){
+	const botaoConcluir = document.createElement('input')
+	botaoConcluir.setAttribute('type', 'checkbox')
+	botaoConcluir.classList = 'form-check-input'
+
+	botaoConcluir.addEventListener('click', concluirTarefa) 
+
+	return botaoConcluir
+}
+
+function concluirTarefa(evento) {
+	const botaoConcluirClicado = evento.target
+	const itemDaListaConcluido = botaoConcluirClicado.parentElement
+	itemDaListaConcluido.classList.toggle('tarefa_concluida')
+}
 
 function deletarTarefa(evento){
 	const botaoDeleteClicado = evento.target
@@ -32,6 +47,8 @@ function criarTarefa(evento)//O parametro se chama evento
     novaLabel.className = "form-check-label"
 
     novoItem = document.createElement('li')
+    novoItem.className = "lista_atividades"
+    novoItem.appendChild(criarBotaoConcluir())
     novoItem.appendChild(novaLabel)
     novoItem.appendChild(criarBotaoDelete())
 
