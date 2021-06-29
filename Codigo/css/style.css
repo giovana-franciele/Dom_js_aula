@@ -194,3 +194,8 @@ body {
     background-color: #0F88FF;
     color: white;
 }
+
+/*Alinhando o item*/
+.lista_atividades {
+    margin-left: 2%;
+}
