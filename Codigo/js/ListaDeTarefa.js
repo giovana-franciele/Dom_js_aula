@@ -7,14 +7,18 @@ function criarBotaoDelete(){
 	botaoDelete.innerText = "x"
 	botaoDelete.classList = "close"
 
-	botaoDelete.addEventListener('click', deletarTarefa)
+	botaoDelete.addEventListener('click', deletarTarefa) //Função nativa
 
 	return botaoDelete
 }
 
-function deletarTarefa(){
-	console.log('Deletar essa tarefa')
+
+function deletarTarefa(evento){
+	const botaoDeleteClicado = evento.target
+	const itemDaLista = botaoDeleteClicado.parentElement
+	itemDaLista.remove()
 }
+
 
 function criarTarefa(evento)//O parametro se chama evento
 {
